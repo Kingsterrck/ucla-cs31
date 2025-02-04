@@ -1,0 +1,21 @@
+For step 5, I used 100 as number of total voters, and 200 and 150 as the votes for each candidate. Apparently it would be impossible for the number of votes for a single candidate to be larger than the number of total votes, but the program is unaware of the problem and outputs 200% and 150%.
+
+For the logic error, I twisted the comparison of voter percentage in line 30, so that even though the program can be compiled and run, the output of election prediction is incorrect.
+
+For the compile error, I first created a name error by deleting the "using namespace std;" declaration on line 5 so that calling "cout" and "cin" produces an error as they are not defined. I also created a syntax error on line 8 by taking out a semicolon at the end of the line.
+
+C:\Users\35814\CLionProjects\cs31\compile_error.cpp -o compile_error
+C:\Users\35814\CLionProjects\cs31\compile_error.cpp: In function 'int main()':
+C:\Users\35814\CLionProjects\cs31\compile_error.cpp:9:5: error: expected initializer before 'int'
+    9 |     int forHarris;
+      |     ^~~
+C:\Users\35814\CLionProjects\cs31\compile_error.cpp:12:5: error: 'cout' was not declared in this scope; did you mean 'std::cout'?
+   12 |     cout << "How many registered voters were surveyed? ";
+      |     ^~~~
+      |     std::cout
+In file included from C:\Users\35814\CLionProjects\cs31\compile_error.cpp:4:
+C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream:63:18: note: 'std::cout' declared here
+   63 |   extern ostream cout;          ///< Linked to standard output
+      |                  ^~~~
+
+As expected, as I did not finish line 8 with a semicolon, the compiler cannot tell if my last command ends and a new one starts, resulting in a compilation error. In line 12, the compiler outputs that "cout" is not declared in this scope as we did not include "using namespace std;".
