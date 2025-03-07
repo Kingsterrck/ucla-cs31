@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <cassert>
 using namespace std;
 
@@ -21,7 +22,7 @@ int countFloatingPointValues(const string array[ ], int n ) {
     }
     int count = 0;
     for (int i = 0; i < n; i++) {
-        if (empty(array[i])) {
+        if (array[i].empty()) {
             continue;
         }
         bool isFloat = true;
@@ -77,5 +78,6 @@ int shiftLeft(string array[], int n, int amount, string placeholder) {
 }
 
 int main() {
-
+    string arr1[] = {};
+    cout << countFloatingPointValues(arr1,0);
 }
